@@ -4,10 +4,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackPugPlugin = require("html-webpack-pug-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserWebpackPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: {
-    script: "./js/_script.js",
+    script: ["@babel/polyfill", "./src/js/_script.js"],
   },
 
   output: {
@@ -18,13 +19,16 @@ module.exports = {
   plugins: [
     // Generating HTML
     new HtmlWebpackPlugin({
-      template: "pug/index/_index.pug",
+      template: "src/pug/sections/catalog/catalog.pug",
+      filename: "catalog.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "src/pug/_index.pug",
       filename: "index.html",
     }),
     new HtmlWebpackPugPlugin(),
-
-    new MiniCssExtractPlugin({ filename: "style.css" }), // Generating CSS
-    new CopyWebpackPlugin([{ from: "img", to: "img" }]), // Copy images
+    new MiniCssExtractPlugin({ filename: "_style.css" }), // Generating CSS
+    new CopyWebpackPlugin([{ from: "src/img", to: "img" }]), // Copy images
   ],
 
   optimization: {
@@ -75,6 +79,16 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
     ],
   },

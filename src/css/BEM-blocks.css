@@ -1,0 +1,11 @@
+.headline {
+  font-size: 36px;
+  line-height: 36px;
+}
+
+.button {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  background: #68b738;
+  color: #ffffff;
+}

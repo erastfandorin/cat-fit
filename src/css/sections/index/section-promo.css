@@ -1,0 +1,69 @@
+.promo {
+  padding-top: 27px;
+  margin-bottom: 22px;
+  background-image: url("../../../img/index/promo-background-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+
+  @media (min-width: 767px) {
+    position: relative;
+    padding-top: 62px;
+    padding-left: 87px;
+    background-image: none;
+  }
+}
+
+.promo__headline {
+  margin-bottom: 25px;
+  font-size: 36px;
+  line-height: 36px;
+  text-align: center;
+  color: #ffffff;
+
+  @media (min-width: 767px) {
+    width: 414px;
+    margin-bottom: 41px;
+    font-size: 60px;
+    line-height: 60px;
+    text-align: left;
+    color: #000000;
+  }
+}
+
+.promo__tagline {
+  margin-bottom: 29px;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  @media (min-width: 767px) {
+    margin-bottom: 49px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: left;
+    color: #000000;
+  }
+}
+
+.promo__product-img {
+  @media (min-width: 767px) {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 79%;
+  }
+}
+
+.promo__choose-program-buttom {
+  display: block;
+  margin: 0 auto;
+  padding: 8px 0;
+  width: 100%;
+
+  @media (min-width: 767px) {
+    margin: 0 0 526px 0;
+    width: 244px;
+  }
+}

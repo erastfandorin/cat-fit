@@ -1,0 +1,8 @@
+@import "global.css";
+@import "BEM-blocks.css";
+@import "sections/header.css";
+@import "sections/footer.css";
+@import "sections/index/section-promo.css";
+@import "sections/index/section-tariff-card.css";
+@import "sections/index/section-how-work.css";
+@import "sections/catalog/product-catalog.css";

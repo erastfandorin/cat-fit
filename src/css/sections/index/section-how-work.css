@@ -1,0 +1,53 @@
+/* .how-work.cont {
+} */
+
+.how-work__headline {
+  margin-bottom: 38px;
+}
+
+.how-work__list {
+  display: flex;
+  flex-flow: column wrap;
+
+  @media (min-width: 767px) {
+    flex-flow: row wrap;
+  }
+}
+
+.how-work__item {
+  position: relative;
+  height: 60px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 18px;
+
+  &:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    content: "lol";
+    text-align: center;
+    background-color: #68b738;
+  }
+
+  @media (min-width: 767px) {
+    width: 250px;
+    height: 280px;
+  }
+}
+
+.how-work__item-text {
+  padding-left: 80px;
+}
+/* .how-work__item-text--img-natural {
+}
+.how-work__item-text--img-water {
+}
+.how-work__item-text--img-eat {
+}
+.how-work__item-text--img-timer {
+} */
