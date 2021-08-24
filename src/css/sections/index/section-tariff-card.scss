@@ -66,13 +66,12 @@
 
 .tariff-card__item-text {
   width: 227px;
-  font-family: Arial;
+  font-family: "Arial", sans-serif;
   font-size: 14px;
   line-height: 18px;
   color: #444444;
 
-  @media (min-width: 767px) {
-  }
+  /*   @media (min-width: 767px) {} */
 }
 
 .tariff-card__catalog-link {
