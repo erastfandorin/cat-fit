@@ -1,4 +1,4 @@
-require("../css/_style.css");
+// require("../css/_style.css");
 
 const menuBurger = document.querySelector(".menu");
 

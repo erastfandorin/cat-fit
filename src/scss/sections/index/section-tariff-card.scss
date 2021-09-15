@@ -1,0 +1,148 @@
+.tariff-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 27px;
+
+  @media (min-width: 1350px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.tariff-card__item {
+  margin-bottom: 20px;
+  padding: 30px 20px 2px;
+  background: #f2f2f2;
+  background-repeat: no-repeat;
+
+  &:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 767px) {
+    min-height: 310px;
+    padding: 77px 20px 53px 52px;
+  }
+
+  @media (min-width: 1350px) {
+    width: 570px;
+    margin-bottom: 0;
+  }
+}
+
+.tariff-card__item--img-slim {
+  background-image: url("../../../img/index/section-tariff/cat-slim.svg");
+  background-position-x: 22px;
+  background-position-y: 21px;
+
+  @media (min-width: 767px) {
+    background-size: 197px;
+    background-position-x: 446px;
+    background-position-y: 81px;
+  }
+
+  @media (min-width: 1350px) {
+    background-size: 102px;
+    background-position-x: 50px;
+    background-position-y: 37px;
+  }
+}
+
+.tariff-card__item--img-pro {
+  background-image: url("../../../img/index/section-tariff/cat-pro.svg");
+  background-position-x: 13px;
+  background-position-y: 24px;
+
+  @media (min-width: 767px) {
+    background-size: 267px;
+    background-position-x: 412px;
+    background-position-y: 91px;
+  }
+
+  @media (min-width: 1350px) {
+    background-size: 136px;
+    background-position-x: 32px;
+    background-position-y: 43px;
+  }
+}
+
+.tariff-card__item-headline {
+  padding: 0 0 0 78px;
+  margin-bottom: 29px;
+  font-size: 24px;
+  line-height: 37px;
+  text-transform: uppercase;
+
+  @media (min-width: 767px) {
+    padding: 0;
+    margin-bottom: 24px;
+    background-image: none;
+  }
+
+  @media (min-width: 1350px) {
+    margin-bottom: 73px;
+    text-align: center;
+  }
+}
+
+.tariff-card__item-text {
+  max-width: 227px;
+  padding-bottom: 23px;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #444444;
+  border-bottom: 1px solid #d9d9d9;
+
+  @media (min-width: 767px) {
+    max-width: 377px;
+    padding-bottom: 48px;
+    border-bottom: none;
+  }
+
+  @media (min-width: 1350px) {
+    max-width: 467px;
+  }
+}
+
+.tariff-card__catalog-link {
+  position: relative;
+  display: block;
+  width: max-content;
+  padding: 15px 50px 15px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 8px;
+    width: 24px;
+    height: 12px;
+    background-image: url("../../../img/index/section-tariff/icon_arrow.svg");
+    background-position: right;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::after {
+      right: 0;
+      width: 32px;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (min-width: 767px) {
+    padding: 0 50px 0 0;
+  }
+
+  /*   @media (min-width: 767px) {
+  } */
+}

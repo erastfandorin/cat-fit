@@ -1,7 +1,14 @@
 header.header
   div.header__content
-    a(href="/").header__logo.cont
-      img(src="../../img/logo-name-mobile.svg", alt="logo")
+    a(href="/").header__logo
+      picture
+        source(media="(min-width: 1350px)" srcset="./img/common/header/logo-cat-desktop.svg")
+        source(media="(min-width: 768px)" srcset="./img/common/header/logo-cat-tablet.svg")
+        img(src="./img/common/header/logo-cat-mobile.svg", alt="logo-img").logo-img
+      picture
+        source(media="(min-width: 1350px)" srcset="./img/common/header/logo-name-desktop.svg")
+        source(media="(min-width: 768px)" srcset="./img/common/header/logo-name-tablet.svg")
+        img(src="./img/common/header/logo-name-mobile.svg", alt="logo-name").logo-name
     nav.menu
       button.menu__toggle
         span.menu__line
