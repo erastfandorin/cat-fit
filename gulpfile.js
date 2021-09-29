@@ -8,7 +8,8 @@ const sass = require("gulp-sass")(require("sass"));
 const autoprefixer = require("gulp-autoprefixer");
 const cleancss = require("gulp-clean-css"); // Сжимаем CSS
 const pug = require("gulp-pug");
-const imagecomp = require("compress-images");
+// const imagecomp = require("compress-images");
+const imagemin = require("gulp-imagemin");
 const del = require("del");
 
 function browsersync() {
@@ -58,25 +59,35 @@ function styles() {
     .pipe(dest("build/css/"))
     .pipe(browserSync.stream());
 }
-async function images() {
-  imagecomp(
-    "src/img/**/**/**/*",
-    "build/img/",
-    { compress_force: false, statistic: true, autoupdate: true },
-    false,
-    { jpg: { engine: "mozjpeg", command: ["-quality", "75"] } },
-    { png: { engine: "pngquant", command: ["--quality=75-100", "-o"] } },
-    { svg: { engine: "svgo", command: "--multipass" } },
-    {
-      gif: { engine: "gifsicle", command: ["--colors", "64", "--use-col=web"] },
-    },
-    function (err, completed) {
-      if (completed === true) {
-        browserSync.reload();
-      }
-    }
-  );
+function images() {
+  return src("src/img/**/*.{jpg,png,svg}")
+    .pipe(
+      imagemin([
+        imagemin.optipng({ optimizationLevel: 3 }),
+        imagemin.mozjpeg({ progressive: true }),
+        imagemin.svgo(),
+      ])
+    )
+    .pipe(dest("build/img/"))
+    .pipe(browserSync.stream());
 }
+// imagecomp(
+//   "src/img/**/**/**/*",
+//   "build/img/",
+//   { compress_force: false, statistic: true, autoupdate: true },
+//   false,
+//   { jpg: { engine: "mozjpeg", command: ["-quality", "75"] } },
+//   { png: { engine: "pngquant", command: ["--quality=75-100", "-o"] } },
+//   { svg: { engine: "svgo", command: "--multipass" } },
+//   {
+//     gif: { engine: "gifsicle", command: ["--colors", "64", "--use-col=web"] },
+//   },
+//   function (err, completed) {
+//     if (completed === true) {
+//       browserSync.reload();
+//     }
+//   }
+// );
 
 // function fonts() {
 //   return src("dev/fonts/**/*").pipe(dest("build/fonts/"));
