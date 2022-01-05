@@ -8,7 +8,6 @@ const sass = require("gulp-sass")(require("sass"));
 const autoprefixer = require("gulp-autoprefixer");
 const cleancss = require("gulp-clean-css"); // Сжимаем CSS
 const pug = require("gulp-pug");
-// const imagecomp = require("compress-images");
 const imagemin = require("gulp-imagemin");
 const del = require("del");
 
@@ -22,10 +21,24 @@ function browsersync() {
   });
 }
 
-function html() {
+function htmlIndex() {
   return src("src/pug/index.pug")
     .pipe(pug({}))
     .pipe(concat("index.html"))
+    .pipe(dest("build/"))
+    .pipe(browserSync.stream());
+}
+function htmlCatalog() {
+  return src("src/pug/sections/catalog/catalog.pug")
+    .pipe(pug({}))
+    .pipe(concat("catalog.html"))
+    .pipe(dest("build/"))
+    .pipe(browserSync.stream());
+}
+function htmlForm() {
+  return src("src/pug/sections/form/form.pug")
+    .pipe(pug({}))
+    .pipe(concat("form.html"))
     .pipe(dest("build/"))
     .pipe(browserSync.stream());
 }
@@ -71,23 +84,6 @@ function images() {
     .pipe(dest("build/img/"))
     .pipe(browserSync.stream());
 }
-// imagecomp(
-//   "src/img/**/**/**/*",
-//   "build/img/",
-//   { compress_force: false, statistic: true, autoupdate: true },
-//   false,
-//   { jpg: { engine: "mozjpeg", command: ["-quality", "75"] } },
-//   { png: { engine: "pngquant", command: ["--quality=75-100", "-o"] } },
-//   { svg: { engine: "svgo", command: "--multipass" } },
-//   {
-//     gif: { engine: "gifsicle", command: ["--colors", "64", "--use-col=web"] },
-//   },
-//   function (err, completed) {
-//     if (completed === true) {
-//       browserSync.reload();
-//     }
-//   }
-// );
 
 // function fonts() {
 //   return src("dev/fonts/**/*").pipe(dest("build/fonts/"));
@@ -103,8 +99,8 @@ function cleanbuild() {
 
 function startwatch() {
   watch("src/js/*.js", scripts);
-  watch("src/scss/*.scss", styles);
-  watch("src/pug/**/*.pug", html);
+  watch("src/scss/**/**/*.scss", styles);
+  watch("src/pug/**/**/*.pug", htmlIndex, htmlCatalog, htmlForm);
   watch("src/img/**/*", images);
   // watch("src/fonts/**/*", fonts);
 }
@@ -113,14 +109,18 @@ function startwatch() {
 // exports.cleanbuild = cleanbuild;
 
 // default
-exports.html = html;
+exports.htmlIndex = htmlIndex;
+exports.htmlCatalog = htmlCatalog;
+exports.htmlForm = htmlForm;
 exports.scripts = scripts;
 exports.styles = styles;
 exports.images = images;
 exports.browsersync = browsersync;
 
 exports.default = parallel(
-  html,
+  htmlIndex,
+  htmlCatalog,
+  htmlForm,
   scripts,
   styles,
   images,

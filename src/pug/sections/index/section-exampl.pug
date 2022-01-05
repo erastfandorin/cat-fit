@@ -1,22 +1,24 @@
 secton.exampl
-  h1.exampl__headline Живой пример
+  h1.exampl__headline.headline Живой пример
   p.exampl__text Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
   .exampl__number-box
     ul.exampl__number-list
-      li.exampl__number-list-item 5 КГ
+      li.exampl__number-list-item
+        p.exampl__number 5 КГ
         p.exampl__description снижение веса
-      li.exampl__number-list-item 60 ДНЕЙ
+      li.exampl__number-list-item
+        p.exampl__number 60 ДНЕЙ
         p.exampl__description затрачено времени
     p.examp__expenses Затраты на питание: 15 000 РУБ.
   .exampl__slider
     .exampl__img-box
         picture
-          source(media="(min-width: 1350px)" srcset="img/index/section-exampl/cat-before-desktop.png")
-          source(media="(min-width: 768px)" srcset="img/index/section-exampl/cat-before-tablet.png")
+          source(media="(min-width: 1024px)" srcset="img/index/section-exampl/cat-before-desktop.png")
+          source(media="(min-width: 767px)" srcset="img/index/section-exampl/cat-before-tablet.png")
           img(src="img/index/section-exampl/cat-before-mobile.png" alt="cat before" width="311" height="232").exampl__img.exampl__img-before
         picture
-          source(media="(min-width: 1350px)" srcset="img/index/section-exampl/cat-after-desktop.png")
-          source(media="(min-width: 768px)" srcset="img/index/section-exampl/cat-after-tablet.png")
+          source(media="(min-width: 1024px)" srcset="img/index/section-exampl/cat-after-desktop.png")
+          source(media="(min-width: 767px)" srcset="img/index/section-exampl/cat-after-tablet.png")
           img(src="img/index/section-exampl/cat-after-mobile.png" alt="cat after" width="251" height="240").exampl__img.exampl__img-after
     .exampl__slider-range
       input(type="range" min="1" max="100" value="50").exampl__input-range

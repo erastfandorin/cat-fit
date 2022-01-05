@@ -81,7 +81,11 @@ dd {
     max-width: 708px;
   }
 
-  @media (min-width: 1350px) {
+  @media (min-width: 1024px) {
+    max-width: 100%;
+  }
+
+  @media (min-width: 1300px) {
     max-width: 1220px;
   }
 }

@@ -1,0 +1,59 @@
+.exampl {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  background-color: #eaeaea;
+}
+
+
+.exampl__headline,
+.exampl__text,
+.exampl__number-box {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.exampl__headline {
+  margin-bottom: 35px;
+}
+
+.exampl__text {
+  padding-right: 5px;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 18px;
+  color: #444444;
+}
+
+.exampl__number-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exampl__number-list-item {
+  position: relative;
+  width: 45%;
+  // padding: 15px 43px;
+  font-family: 'Oswald';
+  font-size: 24px;
+  line-height: 24px;
+  color: #000000;
+  border: 1px solid #cdcdcd;
+  border-radius: 2px;
+}
+
+.exampl__number {}
+
+.exampl__description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-family: Arial;
+  font-size: 12px;
+  line-height: 12px;
+  color: #444444;
+}
+
+.examp__expenses {}

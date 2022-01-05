@@ -1,6 +1,7 @@
 .header {
-  @media (min-width: 1350px) {
+  @media (min-width: 1024px) {
     position: relative;
+    max-width: 1440px;
 
     &::before {
       content: "";
@@ -14,7 +15,16 @@
       background-repeat: repeat;
       background-size: cover;
       background-position: center;
+
+      @media (min-width: 1440px) {
+        width: 720px;
+      }
     }
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }
 
@@ -24,17 +34,25 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  padding: 11px 0 14px 0;
+  padding: 11px 0 0 0;
 
   @media (min-width: 767px) {
     justify-content: space-between;
-    padding: 24px 0 14px 0;
+    padding: 24px 0 0 0;
   }
 
-  @media (min-width: 1350px) {
+  @media (min-width: 1024px) {
+    padding: 24px 50px 0;
+  }
+
+  @media (min-width: 1300px) {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 47px 79px 14px;
+    padding: 53px 108px 0;
+  }
+
+  @media (min-width: 1440px) {
+    min-width: 1440px;
   }
 }
 
@@ -42,16 +60,20 @@
   display: flex;
   justify-content: flex-start;
   min-height: 38px;
-  margin-left: 20px;
+  margin: 0 0 14px 20px;
   /*   background-image: url("../../img/logo-cat-mobile.svg");
   background-position: left;
   background-repeat: no-repeat; */
 
   @media (min-width: 767px) {
     min-height: 51px;
-    margin-left: 30px;
+    margin: 0 0 0 30px;
     align-items: center;
     /*     background-image: url("../../img/logo-cat-tablet.svg"); */
+  }
+
+  @media (min-width:1024px) {
+    margin-left: 0;
   }
 }
 
@@ -82,10 +104,13 @@
     margin-right: 30px;
   }
 
-  @media (min-width: 1350px) {
+  @media (min-width: 1024px) {
     max-width: 570px;
     width: max-content;
+    margin-right: 0;
   }
+
+  @media (min-width: 1300px) {}
 }
 
 .menu__toggle {
@@ -170,7 +195,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 14px;
+  // margin-top: 14px;
 }
 
 .menu__item {
@@ -193,10 +218,20 @@
     margin-bottom: 10px;
   }
 
-  @media (min-width: 1350px) {
+  @media (min-width: 1024px) {
     margin-left: 15px;
     color: #ffffff;
     background: transparent;
+  }
+
+  @media (min-width: 1300px) {
+    margin-left: 36px;
+  }
+
+  &:first-child {
+    @media (min-width: 1024px) {
+      margin-left: 0px;
+    }
   }
 }
 
@@ -208,6 +243,10 @@
   @media (min-width: 767px) {
     padding: 0 0 10px 0;
   }
+
+  @media (min-width: 1300px) {
+    font-size: 20px;
+  }
 }
 
 .menu__link--active {
@@ -217,7 +256,7 @@
     border-bottom: 2px solid #68b738;
   }
 
-  @media (min-width: 1350px) {
+  @media (min-width: 1024px) {
     border-bottom: 2px solid #ffffff;
   }
 }

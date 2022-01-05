@@ -1,6 +1,6 @@
 .promo {
   padding-top: 27px;
-  margin-bottom: 22px;
+  margin-bottom: 27px;
   background-image: url("../../../img/index/promo-background-mobile.jpg");
   background-repeat: no-repeat;
   background-position-x: center;
@@ -10,13 +10,17 @@
     padding-left: 113px;
     background-image: none;
   }
+
+  @media (min-width: 1024px) {
+    padding: 0 50px;
+  }
 }
 
-/* .promo .cont {
-  @media (min-width: 768px) {
-    max-width: initial;
+.promo__cont {
+  @media (min-width: 1024px) {
+    position: relative;
   }
-} */
+}
 
 .promo__headline {
   margin-bottom: 25px;
@@ -35,8 +39,14 @@
     color: #000000;
   }
 
-  @media (min-width: 1350px) {
+  @media (min-width: 1024px) {
     margin-top: 71px;
+  }
+
+  @media (min-width: 1300px) {
+    width: 500px;
+    margin-top: 97px;
+    margin-left: 77px;
   }
 }
 
@@ -55,6 +65,10 @@
     text-align: left;
     color: #000000;
   }
+
+  @media (min-width: 1300px) {
+    margin-left: 77px;
+  }
 }
 
 .promo__product-img {
@@ -67,17 +81,22 @@
     height: auto;
   }
 
-  @media (min-width: 1350px) {
-    left: 38.5%;
+  @media (min-width: 1024px) {
+    left: 32.5%;
     top: 3%;
     width: 559px;
+  }
+
+  @media (min-width: 1300px) {
+    top: -82px;
+    left: 36.4%;
   }
 }
 
 .promo__choose-program-buttom {
   display: block;
   margin: 0 auto;
-  padding: 8px 0;
+  padding: 9px 0;
   width: 100%;
 
   @media (min-width: 767px) {
@@ -87,7 +106,11 @@
     font-size: 20px;
   }
 
-  @media (min-width: 1350px) {
+  @media (min-width: 1024px) {
     margin: 0 0 267px 0;
+  }
+
+  @media (min-width: 1300px) {
+    margin-left: 77px;
   }
 }
